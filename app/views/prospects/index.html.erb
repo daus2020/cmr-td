@@ -1,14 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Prospects</h1>
+<h1 class="text-center">Prospectos</h1>
+<br>
 
+<%= link_to new_prospect_path, class:"text-decoration-none btn btn-outline-light text-light hover-btn mx-auto" do %>
+  <i class="bi bi-blockquote-left">&emsp;Nuevo Prospecto</i>
+<% end %>
+
+<h5 class="text-light">Total de <%= Prospect.count %> prospectos.</h5>
 <div id="prospects">
-  <% @prospects.each do |prospect| %>
-    <%= render prospect %>
-    <p>
-      <%= link_to "Show this prospect", prospect %>
-    </p>
-  <% end %>
+<div class="scroll-tbl-prospects">
+  <table class="table table-primary table-hover border border-primary mb-3 pb-2" id="prospects-tbl">
+    <thead>
+      <tr class="table-info">
+        <th scope="col">Email</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Estatus</th>
+        <th scope="col">Ingresado por</th>
+        <th scope="col">Fecha ingreso</th>
+        <th scope="col">Conversaciones</th>
+        <th scope="col" class="text-center" id="index_options_col">
+          Opciones
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @prospects.each do |prospect| %>
+        <tr>
+          <%= render prospect %>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
 </div>
 
-<%= link_to "New prospect", new_prospect_path %>
+
+

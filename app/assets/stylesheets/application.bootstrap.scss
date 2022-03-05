@@ -47,3 +47,34 @@ h1 {
   height: 110px;
 }
 
+.hover-btn {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #fff 0 2px 14px;
+  background-color: #9a9c93;
+  width: 210px;
+  height: 40px;
+  color: #fff;
+  // width: fit-content;
+  &:hover {
+    background-color: #9a9c93;
+    border-color: rgb(207, 244, 252);
+    // border-color: #009FFF;
+    // color: blue;
+    text-shadow:
+      0 0 7px #00c3ff,
+      0 0 10px #00c3ff,
+      0 0 21px #00c3ff,
+      0 0 42px rgb(145, 232, 249),
+      0 0 82px rgb(145, 232, 249),
+      0 0 92px rgb(145, 232, 249),
+      0 0 102px rgb(188, 237, 247),
+      0 0 151px rgb(235, 252, 255);
+    // border-color: #4B4AF7;
+    // border-color: #001aff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, rgb(0, 217, 255) 0 2px 14px;
+  }
+}
+
+.scroll-tbl-prospects {
+  height: 60vh;
+  overflow: auto;
+}

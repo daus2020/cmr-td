@@ -7,7 +7,7 @@
   <p>
     <strong>Last name:</strong>
     <%= prospect.last_name %>
-  </p>
+   </p>
 
   <p>
     <strong>Phone:</strong>
@@ -21,7 +21,43 @@
 
   <p>
     <strong>User:</strong>
-    <%= prospect.user_id %>
-  </p>
+    <%= current_user.email %>
+  </p> %>
+
+  
+  <td>correo</td>
+  <td><%= prospect.first_name %></td>
+  <td><%= prospect.last_name %></td>
+  <td><%= prospect.phone %></td>
+  <td><%= prospect.status %></td>
+  <td><%= current_user.email %></td>
+  <td class="text-center">
+    <div class="between">
+      <%= link_to prospect do %>
+        <button class="btn btn-outline-primary btn-sm show-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mostrar">
+          <i class="bi bi-eye"></i>
+        </button>
+      <% end %>
+
+      <%= link_to edit_prospect_path(prospect) do %>
+        <button class="btn btn-outline-primary btn-sm edit-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar">
+          <i class="bi bi-pencil"></i>
+        </button>
+      <% end %>
+
+      <%= link_to prospect, method: :delete, data: {turbo_method: :delete, turbo_confirm: "¿Está seguro de eliminarlo?"} do %>
+        <button class="btn btn-outline-primary btn-sm del-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar">
+          <i class="bi bi-trash"></i>
+        </button>
+      <% end %>
+    
+    </div>
+  </td>
+  
+
+
+
+
+
 
 </div>
