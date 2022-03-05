@@ -4,7 +4,7 @@ class ProspectsController < ApplicationController
 
   # GET /prospects or /prospects.json
   def index
-    @prospects = Prospect.all
+    @prospects = current_user.prospects
   end
 
   # GET /prospects/1 or /prospects/1.json
@@ -13,7 +13,7 @@ class ProspectsController < ApplicationController
 
   # GET /prospects/new
   def new
-    @prospect = Prospect.new
+    @prospect = current_user.prospects.build
   end
 
   # GET /prospects/1/edit
@@ -22,7 +22,7 @@ class ProspectsController < ApplicationController
 
   # POST /prospects or /prospects.json
   def create
-    @prospect = Prospect.new(prospect_params)
+    @prospect = current_user.prospects.build(prospect_params)
 
     respond_to do |format|
       if @prospect.save
@@ -61,11 +61,11 @@ class ProspectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_prospect
-      @prospect = Prospect.find(params[:id])
+      @prospect = current_user.prospects.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def prospect_params
-      params.require(:prospect).permit(:first_name, :last_name, :phone, :status, :user_id)
+      params.require(:prospect).permit(:first_name, :last_name, :phone, :status)
     end
 end

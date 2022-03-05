@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Chat:</b>
+  <%= @conversation.chat %>
+</p>
+
+<p>
+  <b>Prospect:</b>
+  <%= @conversation.prospect %>
+</p>
+
+
+<%= link_to 'Edit', edit_prospect_conversation_path(@conversation.prospect, @conversation) %> |
+<%= link_to 'Back', prospect_conversations_path(@conversation.prospect) %>
