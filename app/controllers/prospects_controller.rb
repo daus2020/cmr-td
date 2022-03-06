@@ -4,7 +4,7 @@ class ProspectsController < ApplicationController
 
   # GET /prospects or /prospects.json
   def index
-    @prospects = current_user.prospects
+    @prospects = Prospect.all
   end
 
   # GET /prospects/1 or /prospects/1.json
@@ -13,7 +13,8 @@ class ProspectsController < ApplicationController
 
   # GET /prospects/new
   def new
-    @prospect = current_user.prospects.build
+    @prospect = Prospect.new
+    # @prospect = current_user.prospects.build
   end
 
   # GET /prospects/1/edit
@@ -22,7 +23,8 @@ class ProspectsController < ApplicationController
 
   # POST /prospects or /prospects.json
   def create
-    @prospect = current_user.prospects.build(prospect_params)
+    @prospect = Prospect.new(prospect_params)
+    @prospect.user = current_user
 
     respond_to do |format|
       if @prospect.save

@@ -1,8 +1,7 @@
 <div id="<%= dom_id prospect %>">
 
-  <td>correo</td>
-  <td><%= prospect.first_name %></td>
-  <td><%= prospect.last_name %></td>
+  <%# <td><%= prospect.email </td> %>
+  <td><%= prospect.first_name + " " + prospect.last_name%></td>
   <td><%= prospect.phone %></td>
   <td><%= prospect.status %></td>
   <td><%= current_user.email %></td>
