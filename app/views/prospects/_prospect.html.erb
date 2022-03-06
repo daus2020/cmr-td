@@ -1,36 +1,12 @@
 <div id="<%= dom_id prospect %>">
-  <p>
-    <strong>First name:</strong>
-    <%= prospect.first_name %>
-  </p>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= prospect.last_name %>
-   </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= prospect.phone %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= prospect.status %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= current_user.email %>
-  </p> %>
-
-  
   <td>correo</td>
   <td><%= prospect.first_name %></td>
   <td><%= prospect.last_name %></td>
   <td><%= prospect.phone %></td>
   <td><%= prospect.status %></td>
   <td><%= current_user.email %></td>
+  <td><%= prospect.user.email %></td>
   <td class="text-center">
     <div class="between">
       <%= link_to prospect do %>
@@ -53,11 +29,5 @@
     
     </div>
   </td>
-  
-
-
-
-
-
 
 </div>
